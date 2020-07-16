@@ -48,8 +48,6 @@ links:
     jointType: revolute
     jointAxis: Y
     jointRange: unlimited
-    #jointId: 0
-    #actuationMode: jointSurfaceVelocity
     material: TankTracks
     inertia: [
       0.01, 0,   0,
@@ -75,8 +73,6 @@ links:
     jointType: revolute
     jointAxis: Y
     jointRange: unlimited
-    #jointId: 1
-    #actuationMode: jointSurfaceVelocity
     material: TankTracks
     inertia: [
       0.01, 0,   0,
@@ -137,7 +133,7 @@ links:
         elements:
           -
             type: RangeSensor
-            name: VLP-16
+            name: LRF
             translation: [ 0, 0, 0.1 ]
             rotation: [ [ 1, 0, 0, 90 ], [ 0, 1, 0, -90 ] ]
             yawRange: 360.0

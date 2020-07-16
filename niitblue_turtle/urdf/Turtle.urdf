@@ -62,6 +62,23 @@
     </visual>
   </link>
 
+  <joint name="LRF" type="fixed">
+    <origin xyz="0.01 0 0.101" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="LRF"/>
+  </joint>
+
+  <link name="LRF">
+    <visual>
+      <geometry>
+        <cylinder length="0.02" radius="0.032" />
+      </geometry>
+      <material name="dark_gray">
+        <color rgba="0.25 0.25 0.25 2.0"/>
+      </material>
+    </visual>
+  </link>
+
 
   <transmission name="WHEEL_L_trans">
     <type>transmission_interface/SimpleTransmission</type>
