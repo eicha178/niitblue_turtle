@@ -26,7 +26,6 @@ items:
               name: "Labo1"
               plugin: Body
               class: BodyItem
-              is_selected: true
               is_checked: true
               data: 
                 file: "${SHARE}/model/Labo1/Labo1.body"
@@ -56,6 +55,7 @@ items:
           name: "AISTSimulator"
           plugin: Body
           class: AISTSimulatorItem
+          is_selected: true
           is_checked: true
           data: 
             timeStep: 0.001
@@ -82,8 +82,27 @@ items:
             kinematicWalking: false
             2Dmode: false
             oldAccelSensorMode: false
+          children: 
+            - 
+              id: 5
+              name: "GLVisionSimulator"
+              plugin: Body
+              class: GLVisionSimulatorItem
+              data: 
+                enabled: true
+                maxFrameRate: 1000
+                maxLatency: 1
+                recordVisionData: false
+                threadMode: Sensor
+                bestEffort: false
+                allSceneObjects: false
+                rangeSensorPrecisionRatio: 2
+                depthError: 0
+                enableHeadLight: true
+                enableAdditionalLights: true
+                antiAliasing: false
         - 
-          id: 5
+          id: 6
           name: "WorldROS"
           plugin: ROS
           class: WorldROSItem
@@ -91,7 +110,7 @@ items:
           data: 
             max_clock_publishing_rate: 100
         - 
-          id: 6
+          id: 7
           name: "Turtle"
           plugin: Body
           class: BodyItem
@@ -99,11 +118,11 @@ items:
           data: 
             file: "../body/Turtle.body"
             format: CHOREONOID-BODY
-            rootPosition: [ 12.0001, 7, 0.08 ]
+            rootPosition: [ 12.0004457, 7.0000001, 0.0807092399 ]
             rootAttitude: [ 
-              -0.999999119, -2.76520189e-07, 0.00132752887, 
-              2.7479151e-07, -1, -1.30236026e-06, 
-              0.00132752887, -1.30199432e-06, 0.999999119 ]
+              -0.999984204, -3.76292876e-07, 0.00562067598, 
+              3.7572298e-07, -1, -1.02448742e-07, 
+              0.00562067598, -1.00335306e-07, 0.999984204 ]
             jointDisplacements: [ 0, 0 ]
             jointPositions: [ 0, 0 ]
             initialRootPosition: [ 12.0001, 7, 0.08 ]
@@ -115,12 +134,12 @@ items:
             staticModel: false
             collisionDetection: true
             selfCollisionDetection: false
-            location_editable: false
+            location_editable: true
             scene_sensitive: true
             zmp: [ 0, 0, 0 ]
           children: 
             - 
-              id: 7
+              id: 8
               name: "BodyROS"
               plugin: ROS
               class: BodyROSItem
@@ -129,7 +148,7 @@ items:
                 body_ros_version: 0
                 joint_state_update_rate: 100
             - 
-              id: 8
+              id: 9
               name: "ROSControl"
               plugin: Body
               class: SimpleControllerItem
@@ -154,7 +173,7 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      expanded: [ 1, 2, 3, 4, 6 ]
+      expanded: [ 1, 2, 3, 4, 7 ]
   - 
     id: 2
     plugin: Base
@@ -206,9 +225,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 13.7793, 8.67356, 1.53721 ]
-          direction: [ -0.804234, -0.423589, -0.41687 ]
-          up: [ -0.368838, -0.194266, 0.908966 ]
+          eye: [ 11.9787, 8.38457, 0.148994 ]
+          direction: [ -0.0557096, -0.993443, 0.0998344 ]
+          up: [ 0.00558966, 0.0996778, 0.995004 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 12.1306
@@ -353,7 +372,7 @@ toolbars:
     frameRate: 100
     playbackFrameRate: 50
     idleLoopDrivenMode: false
-    currentTime: 0
+    currentTime: 5.3
     speedScale: 1
     syncToOngoingUpdates: true
     autoExpansion: true
@@ -373,8 +392,8 @@ Body:
   "BodyMotionEngine": 
     updateJointVelocities: false
   "BodySelectionManager": 
-    currentBodyItem: 3
-    currentLink: "Root"
+    currentBodyItem: 7
+    currentLink: "base_link"
   "EditableSceneBody": 
     editableSceneBodies: 
       - 
@@ -383,7 +402,7 @@ Body:
         showPpcom: false
         showZmp: false
       - 
-        bodyItem: 6
+        bodyItem: 7
         showCenterOfMass: false
         showPpcom: false
         showZmp: false
