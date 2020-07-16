@@ -26,6 +26,7 @@ items:
               name: "Labo1"
               plugin: Body
               class: BodyItem
+              is_selected: true
               is_checked: true
               data: 
                 file: "${SHARE}/model/Labo1/Labo1.body"
@@ -35,8 +36,9 @@ items:
                   -1, -1.2246468e-16, 0, 
                   1.2246468e-16, -1, 0, 
                   0, 0, 1 ]
-                jointDisplacements: [ 0 ]
-                jointPositions: [ 0 ]
+                jointDisplacements: [ -1.62844e-15 ]
+                initialJointDisplacements: [ 0 ]
+                jointPositions: [ -2.84217e-17 ]
                 initialRootPosition: [ 10, 7, 0 ]
                 initialRootAttitude: [ 
                   -1, -1.2246468e-16, 0, 
@@ -93,23 +95,22 @@ items:
           name: "Turtle"
           plugin: Body
           class: BodyItem
-          is_selected: true
           is_checked: true
           data: 
             file: "../body/Turtle.body"
             format: CHOREONOID-BODY
-            rootPosition: [ 12, 7, 0.2 ]
+            rootPosition: [ 12.0001, 7, 0.08 ]
             rootAttitude: [ 
-              -1, -1.2246468e-16, 0, 
-              1.2246468e-16, -1, 0, 
-              0, 0, 1 ]
+              -0.999999119, -2.76520189e-07, 0.00132752887, 
+              2.7479151e-07, -1, -1.30236026e-06, 
+              0.00132752887, -1.30199432e-06, 0.999999119 ]
             jointDisplacements: [ 0, 0 ]
             jointPositions: [ 0, 0 ]
-            initialRootPosition: [ 12, 7, 0.2 ]
+            initialRootPosition: [ 12.0001, 7, 0.08 ]
             initialRootAttitude: [ 
-              -1, -1.2246468e-16, 0, 
-              1.2246468e-16, -1, 0, 
-              0, 0, 1 ]
+              -0.999999119, -2.76520189e-07, 0.00132752887, 
+              2.7479151e-07, -1, -1.30236026e-06, 
+              0.00132752887, -1.30199432e-06, 0.999999119 ]
             initialJointPositions: [ 0, 0 ]
             staticModel: false
             collisionDetection: true
@@ -205,9 +206,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 12.1095, 7.65979, 0.0496813 ]
-          direction: [ -0.373795, -0.919753, 0.119713 ]
-          up: [ 0.0450722, 0.110904, 0.992809 ]
+          eye: [ 13.7793, 8.67356, 1.53721 ]
+          direction: [ -0.804234, -0.423589, -0.41687 ]
+          up: [ -0.368838, -0.194266, 0.908966 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 12.1306
@@ -265,9 +266,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ -2.00307, -1.42061, 0.458768 ]
-          direction: [ 0.714656, 0.695834, -0.0712805 ]
-          up: [ 0.051071, 0.0497259, 0.997456 ]
+          eye: [ 10.5329, 7.17649, 8.70874 ]
+          direction: [ -0.0494342, 0.000314039, -0.998777 ]
+          up: [ -0.998757, 0.00634477, 0.0494352 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -356,8 +357,6 @@ toolbars:
     speedScale: 1
     syncToOngoingUpdates: true
     autoExpansion: true
-  "LeggedBodyBar": 
-    stanceWidth: 0.15
   "KinematicsBar": 
     forward_kinematics: true
     inverse_kinematics: true
@@ -368,12 +367,14 @@ toolbars:
     snapDistance: 0.025
     penetrationBlockDepth: 0.0005
     lazyCollisionDetectionMode: true
+  "LeggedBodyBar": 
+    stanceWidth: 0.15
 Body: 
   "BodyMotionEngine": 
     updateJointVelocities: false
   "BodySelectionManager": 
-    currentBodyItem: 6
-    currentLink: "base_link"
+    currentBodyItem: 3
+    currentLink: "Root"
   "EditableSceneBody": 
     editableSceneBodies: 
       - 
@@ -434,7 +435,7 @@ viewAreas:
                 - 
                   type: pane
                   views: [ 5, 6, 4 ]
-                  current: 5
+                  current: 4
                 - 
                   type: pane
                   views: [ 3 ]
