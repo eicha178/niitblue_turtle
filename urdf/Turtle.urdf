@@ -11,13 +11,13 @@
     </visual>
   </link>
 
-  <joint name="base_link_to_WHEEL_L" type="continuous">
+  <joint name="WHEEL_L" type="continuous">
     <origin xyz="0.033 0.08 -0.048" rpy="1.57 0 0"/>
     <parent link="base_link"/>
-    <child link="WHEEL_L"/>
+    <child link="WHEEL_L0"/>
   </joint>
 
-  <link name="WHEEL_L">
+  <link name="WHEEL_L0">
     <visual>
       <geometry>
         <cylinder length="0.018" radius="0.033" />
@@ -28,13 +28,13 @@
     </visual>
   </link>
 
-  <joint name="base_link_to_WHEEL_R" type="continuous">
+  <joint name="WHEEL_R" type="continuous">
     <origin xyz="0.033 -0.08 -0.048" rpy="-1.57 0 0"/>
     <parent link="base_link"/>
-    <child link="WHEEL_R"/>
+    <child link="WHEEL_R0"/>
   </joint>
 
-  <link name="WHEEL_R">
+  <link name="WHEEL_R0">
     <visual>
       <geometry>
         <cylinder length="0.018" radius="0.033" />
@@ -61,5 +61,26 @@
       </material>
     </visual>
   </link>
+
+
+  <transmission name="WHEEL_L_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="WHEEL_L">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="WHEEL_L_motor">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="WHEEL_R_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="WHEEL_R">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="WHEEL_R_motor">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
 
 </robot>

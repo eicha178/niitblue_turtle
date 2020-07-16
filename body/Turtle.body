@@ -23,10 +23,11 @@ links:
     name: base_link
     translation: [ 0, 0, 0.076 ]
     mass: 0.9
+    jointType: free
     inertia: [
-      0.1, 0,   0,
-      0,   0.1, 0,
-      0,   0,   0.4 ]
+      0.1, 0,    0,
+      0,   0.1,  0,
+      0,   0,  0.5 ]
     elements:
       -
         type: Collision
@@ -45,13 +46,15 @@ links:
     translation: [ 0.033, 0.08, -0.048]
     mass: 0.1
     jointType: revolute
-    jointAxis: -Y
+    jointAxis: Y
     jointRange: unlimited
-    jointId: 0
+    #jointId: 0
+    #actuationMode: jointSurfaceVelocity
+    material: TankTracks
     inertia: [
-      0.1, 0,   0,
-      0,   0.1, 0,
-      0,   0,   0.4 ]
+      0.01, 0,   0,
+      0,   0.01, 0,
+      0,   0,   0.01 ]
     elements:
       -
         type: Collision
@@ -72,18 +75,20 @@ links:
     jointType: revolute
     jointAxis: Y
     jointRange: unlimited
-    jointId: 1
+    #jointId: 1
+    #actuationMode: jointSurfaceVelocity
+    material: TankTracks
     inertia: [
-      0.1, 0,   0,
-      0,   0.1, 0,
-      0,   0,   0.4 ]
+      0.01, 0,   0,
+      0,   0.01, 0,
+      0,   0,   0.01 ]
     elements:
       -
         type: Collision
         elements: &WHEEL_R
           -
             type: Shape
-            rotation: [ 0, 0, 1, 180]
+            #rotation: [ 0, 0, 1, 180]
             geometry: { type: Cylinder, radius: 0.033, height: 0.018 }
             appearance: *DARK_GRAY
       -
@@ -93,6 +98,11 @@ links:
     name: CASTER
     parent: base_link
     translation: [ -0.05, 0, -0.076 ]
+    inertia: [
+      0.01, 0,   0,
+      0,   0.01, 0,
+      0,   0,   0.01 ]
+    material: SpiderWheel
     elements:
       -
         type: Collision
