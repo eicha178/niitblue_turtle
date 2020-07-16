@@ -1,0 +1,106 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Turtle
+rootLink: base_link
+
+
+GREEN: &GREEN
+  material:
+    diffuseColor: [ 0, 0.75, 0 ]
+    specularColor: [ 0, 0, 0 ]
+    shinines: 0
+
+DARK_GRAY: &DARK_GRAY
+  material:
+    diffuseColor: [ 0.25, 0.25, 0.25 ]
+    specularColor: [ 0, 0, 0 ]
+    shinines: 0
+
+
+links:
+  -
+    name: base_link
+    translation: [ 0, 0, 0.076 ]
+    mass: 0.9
+    inertia: [
+      0.1, 0,   0,
+      0,   0.1, 0,
+      0,   0,   0.4 ]
+    elements:
+      -
+        type: Collision
+        elements: &base_link
+          -
+            type: Shape
+            rotation: [ 1, 0, 0, 90]
+            geometry: { type: Cylinder, radius: 0.064, height: 0.142 }
+            appearance: *GREEN
+      -
+        type: Visual
+        elements: *base_link
+  -
+    name: WHEEL_L
+    parent: base_link
+    translation: [ 0.033, 0.08, -0.048]
+    mass: 0.1
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: unlimited
+    jointId: 0
+    inertia: [
+      0.1, 0,   0,
+      0,   0.1, 0,
+      0,   0,   0.4 ]
+    elements:
+      -
+        type: Collision
+        elements: &WHEEL_L
+          -
+            type: Shape
+            #rotation: [ 0, 0, 1, 90]
+            geometry: { type: Cylinder, radius: 0.033, height: 0.018 }
+            appearance: *DARK_GRAY
+      -
+        type: Visual
+        elements: *WHEEL_L
+  -
+    name: WHEEL_R
+    parent: base_link
+    translation: [ 0.033, -0.08, -0.048]
+    mass: 0.1
+    jointType: revolute
+    jointAxis: Y
+    jointRange: unlimited
+    jointId: 1
+    inertia: [
+      0.1, 0,   0,
+      0,   0.1, 0,
+      0,   0,   0.4 ]
+    elements:
+      -
+        type: Collision
+        elements: &WHEEL_R
+          -
+            type: Shape
+            rotation: [ 0, 0, 1, 180]
+            geometry: { type: Cylinder, radius: 0.033, height: 0.018 }
+            appearance: *DARK_GRAY
+      -
+        type: Visual
+        elements: *WHEEL_R
+  -
+    name: CASTER
+    parent: base_link
+    translation: [ -0.05, 0, -0.076 ]
+    elements:
+      -
+        type: Collision
+        elements: &CASTER
+          -
+            type: Shape
+            geometry: { type: Sphere, radius: 0.005 }
+            appearance: *DARK_GRAY
+      -
+        type: Visual
+        elements: *CASTER
