@@ -11,6 +11,19 @@
     </visual>
   </link>
 
+
+  <joint name="ACCEL_SENSOR" type="fixed">
+    <parent link="base_link"/>
+    <child link="ACCEL_SENSOR"/>
+  </joint>
+  <link name="ACCEL_SENSOR"/>
+
+  <joint name="GYRO" type="fixed">
+    <parent link="base_link"/>
+    <child link="GYRO"/>
+  </joint>
+  <link name="GYRO"/>
+
   <joint name="WHEEL_L" type="continuous">
     <origin xyz="0.033 0.08 -0.048"/>
     <parent link="base_link"/>

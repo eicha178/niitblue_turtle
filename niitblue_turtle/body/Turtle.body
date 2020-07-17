@@ -40,6 +40,15 @@ links:
       -
         type: Visual
         elements: *base_link
+      -
+        type: AccelerationSensor
+        name: ACCEL_SENSOR
+        id: 0 
+      -
+        type: RateGyroSensor
+        name: GYRO
+        id: 0
+
   -
     name: WHEEL_L
     parent: base_link

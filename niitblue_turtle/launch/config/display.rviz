@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /TF1/Tree1
+        - /Imu1/Status1
       Splitter Ratio: 0.5
     Tree Height: 728
   - Class: rviz/Selection
@@ -87,6 +88,10 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
+        ACCEL_SENSOR:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         All Links Enabled: true
         CASTER:
           Alpha: 1
@@ -96,6 +101,10 @@ Visualization Manager:
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
+        GYRO_SENSOR:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         LRF:
           Alpha: 1
           Show Axes: false
@@ -127,8 +136,14 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
+        ACCEL_SENSOR:
+          Value: true
         All Enabled: true
         CASTER:
+          Value: true
+        GYRO:
+          Value: true
+        GYRO_SENSOR:
           Value: true
         LRF:
           Value: true
@@ -145,7 +160,13 @@ Visualization Manager:
       Show Names: true
       Tree:
         base_link:
+          ACCEL_SENSOR:
+            {}
           CASTER:
+            {}
+          GYRO:
+            {}
+          GYRO_SENSOR:
             {}
           LRF:
             {}
@@ -155,6 +176,24 @@ Visualization Manager:
             {}
       Update Interval: 0
       Value: true
+    - Alpha: 1
+      Class: rviz_plugin_tutorials/Imu
+      Color: 204; 51; 204
+      Enabled: true
+      History Length: 1
+      Name: Imu
+      Topic: /Turtle/ACCEL_SENSOR
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Class: rviz_plugin_tutorials/Imu
+      Color: 204; 51; 204
+      Enabled: false
+      History Length: 1
+      Name: Imu
+      Topic: /Turtle/GYRO
+      Unreliable: false
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -183,16 +222,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 5.862634181976318
+      Distance: 4.783707618713379
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.2328342199325562
-        Y: -0.41497188806533813
-        Z: -0.5783164501190186
+        X: 0
+        Y: 0
+        Z: 0
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false

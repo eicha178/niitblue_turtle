@@ -35,9 +35,8 @@ items:
                   -1, -1.2246468e-16, 0, 
                   1.2246468e-16, -1, 0, 
                   0, 0, 1 ]
-                jointDisplacements: [ -1.62844e-15 ]
-                initialJointDisplacements: [ 0 ]
-                jointPositions: [ -2.84217e-17 ]
+                jointDisplacements: [ 0 ]
+                jointPositions: [ 0 ]
                 initialRootPosition: [ 10, 7, 0 ]
                 initialRootAttitude: [ 
                   -1, -1.2246468e-16, 0, 
@@ -118,11 +117,11 @@ items:
           data: 
             file: "../body/Turtle.body"
             format: CHOREONOID-BODY
-            rootPosition: [ 12.0004457, 7.0000001, 0.0807092399 ]
+            rootPosition: [ 12.0001, 7, 0.08 ]
             rootAttitude: [ 
-              -0.999984204, -3.76292876e-07, 0.00562067598, 
-              3.7572298e-07, -1, -1.02448742e-07, 
-              0.00562067598, -1.00335306e-07, 0.999984204 ]
+              -0.999999119, -2.76520189e-07, 0.00132752887, 
+              2.7479151e-07, -1, -1.30236026e-06, 
+              0.00132752887, -1.30199432e-06, 0.999999119 ]
             jointDisplacements: [ 0, 0 ]
             jointPositions: [ 0, 0 ]
             initialRootPosition: [ 12.0001, 7, 0.08 ]
@@ -225,9 +224,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 11.9787, 8.38457, 0.148994 ]
-          direction: [ -0.0557096, -0.993443, 0.0998344 ]
-          up: [ 0.00558966, 0.0996778, 0.995004 ]
+          eye: [ 14.8291, 9.66223, 2.92015 ]
+          direction: [ -0.75738, -0.37976, -0.531185 ]
+          up: [ -0.474838, -0.23809, 0.847256 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 12.1306
@@ -368,14 +367,16 @@ toolbars:
     dynamicsTimeRatio: 1
   "TimeBar": 
     minTime: 0
-    maxTime: 199.78
+    maxTime: 680.02
     frameRate: 100
     playbackFrameRate: 50
     idleLoopDrivenMode: false
-    currentTime: 5.3
+    currentTime: 0
     speedScale: 1
     syncToOngoingUpdates: true
     autoExpansion: true
+  "LeggedBodyBar": 
+    stanceWidth: 0.15
   "KinematicsBar": 
     forward_kinematics: true
     inverse_kinematics: true
@@ -386,8 +387,6 @@ toolbars:
     snapDistance: 0.025
     penetrationBlockDepth: 0.0005
     lazyCollisionDetectionMode: true
-  "LeggedBodyBar": 
-    stanceWidth: 0.15
 Body: 
   "BodyMotionEngine": 
     updateJointVelocities: false
@@ -447,17 +446,9 @@ viewAreas:
           sizes: [ 676, 255 ]
           children: 
             - 
-              type: splitter
-              orientation: horizontal
-              sizes: [ 636, 767 ]
-              children: 
-                - 
-                  type: pane
-                  views: [ 5, 6, 4 ]
-                  current: 4
-                - 
-                  type: pane
-                  views: [ 3 ]
+              type: pane
+              views: [ 5, 6, 4, 3 ]
+              current: 3
             - 
               type: pane
               views: [ 2, 8 ]
