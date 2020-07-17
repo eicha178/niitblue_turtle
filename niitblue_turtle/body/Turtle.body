@@ -59,7 +59,6 @@ links:
         elements: &WHEEL_L
           -
             type: Shape
-            #rotation: [ 0, 0, 1, 90]
             geometry: { type: Cylinder, radius: 0.033, height: 0.018 }
             appearance: *DARK_GRAY
       -
@@ -69,9 +68,10 @@ links:
     name: WHEEL_R
     parent: base_link
     translation: [ 0.033, -0.08, -0.048]
+    rotation: [ 0, 0, 1, 180]
     mass: 0.1
     jointType: revolute
-    jointAxis: Y
+    jointAxis: -Y
     jointRange: unlimited
     material: TankTracks
     inertia: [
@@ -84,7 +84,6 @@ links:
         elements: &WHEEL_R
           -
             type: Shape
-            #rotation: [ 0, 0, 1, 180]
             geometry: { type: Cylinder, radius: 0.033, height: 0.018 }
             appearance: *DARK_GRAY
       -

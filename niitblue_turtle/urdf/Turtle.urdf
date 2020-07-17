@@ -12,9 +12,13 @@
   </link>
 
   <joint name="WHEEL_L" type="continuous">
-    <origin xyz="0.033 0.08 -0.048" rpy="1.57 0 0"/>
+<!--
+    <origin xyz="0.033 0.08 -0.048" rpy="0 0 0"/>
+-->
+    <origin xyz="0.033 0.08 -0.048"/>
     <parent link="base_link"/>
     <child link="WHEEL_L0"/>
+    <axis xyz="0 1 0"/>
   </joint>
 
   <link name="WHEEL_L0">
@@ -22,6 +26,7 @@
       <geometry>
         <cylinder length="0.018" radius="0.033" />
       </geometry>
+      <origin rpy="1.57 0 0"/>
       <material name="dark_gray">
         <color rgba="0.25 0.25 0.25 2.0"/>
       </material>
@@ -29,9 +34,10 @@
   </link>
 
   <joint name="WHEEL_R" type="continuous">
-    <origin xyz="0.033 -0.08 -0.048" rpy="-1.57 0 0"/>
+    <origin xyz="0.033 -0.08 -0.048" rpy="3.14 0 0"/>
     <parent link="base_link"/>
     <child link="WHEEL_R0"/>
+    <axis xyz="0 -1 0"/>
   </joint>
 
   <link name="WHEEL_R0">
@@ -39,6 +45,11 @@
       <geometry>
         <cylinder length="0.018" radius="0.033" />
       </geometry>
+<!--
+      <origin rpy="0 0 1.57"/>
+-->
+      <origin rpy="1.57 0 0"/>
+
       <material name="dark_gray">
         <color rgba="0.25 0.25 0.25 2.0"/>
       </material>
